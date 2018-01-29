@@ -1,28 +1,7 @@
-﻿class Greeter {
-    element: HTMLElement;
-    span: HTMLElement;
-    timerToken: number;
+﻿let product1: Product = new Product("Bamba", 28, new FullTime(18, 12, 2021, 12, 45, 15));
+let product2: Product = new Product("Bisley", 35, new FullTime(23, 7, 2025, 19, 15, 59));
+let product3: Product = new Product("Gold Flakes Icecream", 212, new FullTime(31, 10, 2049, 12, 59, 59));
 
-    constructor(element: HTMLElement) {
-        this.element = element;
-        this.element.innerHTML += "The time is: ";
-        this.span = document.createElement('span');
-        this.element.appendChild(this.span);
-        this.span.innerText = new Date().toUTCString();
-    }
-
-    start() {
-        this.timerToken = setInterval(() => this.span.innerHTML = new Date().toUTCString(), 500);
-    }
-
-    stop() {
-        clearTimeout(this.timerToken);
-    }
-
-}
-
-window.onload = () => {
-    var el = document.getElementById('content');
-    var greeter = new Greeter(el);
-    greeter.start();
-};
+document.write(product1.toString());
+document.write(product2.toString());
+document.write(product3.toString());
